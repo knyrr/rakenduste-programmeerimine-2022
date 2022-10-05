@@ -14,10 +14,7 @@ require("dotenv").config({ path: ".env" })
 app.use(morgan("dev"))
 app.use(express.json()) // body-parser asemel
 
-//const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority`
-//const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.smsefbc.mongodb.net/?retryWrites=true&w=majority`
-const uri =
-  "mongodb+srv://knyrr:DPIbDSfoa5Oyl2Rn@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority"
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority`
 
 mongoose
   .connect(uri)
