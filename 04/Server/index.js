@@ -9,12 +9,14 @@ const dogsRoutes = require("./routes/dogs.routes")
 const catsRoutes = require("./routes/cats.routes")
 const todoRoutes = require("./routes/todo.routes")
 
-require("dotenv").config({ path: ".env" })
+require("dotenv").config()
 
 app.use(morgan("dev"))
 app.use(express.json()) // body-parser asemel
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority`
+
+//mongodb+srv://knyrr:<password>@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority
 
 mongoose
   .connect(uri)
