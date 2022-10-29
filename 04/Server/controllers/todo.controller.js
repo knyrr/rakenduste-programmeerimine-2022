@@ -33,7 +33,7 @@ exports.update = async (req, res) => {
   const { title, date, importance, completed } = req.body
   const { name } = req.params
   const filter = { _id: name }
-  const update = { title: title + "_muudetud", date, importance, completed }
+  const update = { title, date, importance, completed }
 
   //res.send(name)
   //Raimo põhjal

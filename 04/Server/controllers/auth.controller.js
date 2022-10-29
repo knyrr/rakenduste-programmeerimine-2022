@@ -8,8 +8,8 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
   User.login(req.body)
-    .then((data) => res.send(`Login done ${data}`))
-    .catch((err) => res.send(`Login failed ${err}`))
+    .then((data) => res.send(data))
+    .catch((err) => res.send(err))
 }
 
 exports.protected = async (req, res) => {

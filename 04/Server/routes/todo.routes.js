@@ -4,6 +4,11 @@ const express = require("express")
 const router = express.Router()
 const todoController = require("../controllers/todo.controller")
 
+/* const corsOptions = {
+  //origin: "http://localhost:3000",
+  origin: true,
+} */
+
 // middleware that is specific to this router
 router.use((req, res, next) => {
   console.log("Time: ", Date.now())
@@ -15,8 +20,8 @@ const getMiddleware = (req, res, next) => {
   next()
 }
 
-router.get("/", getMiddleware, todoController.read)
-router.post("/:name", todoController.create)
+router.get("/", todoController.read)
+router.post("/", todoController.create)
 router.put("/:name", todoController.update)
 router.delete("/:name", todoController.delete)
 

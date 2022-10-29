@@ -4,6 +4,7 @@
 const express = require("express")
 const { default: mongoose } = require("mongoose")
 const morgan = require("morgan")
+const cors = require("cors")
 const app = express()
 const PORT = 8080
 const dogsRoutes = require("./routes/dogs.routes")
@@ -15,8 +16,24 @@ const authRoutes = require("./routes/auth.routes")
 const dotenv = require("dotenv")
 dotenv.config({ path: ".env" })
 
+const corsOptions = {
+  //origin: "http://localhost:3000",
+  origin: true,
+}
+
 app.use(morgan("dev"))
 app.use(express.json()) // body-parser asemel
+
+/* app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  )
+  next()
+}) */
+
+app.use(cors())
 
 //SALASÕNA ON NÄHA!
 //const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority`
