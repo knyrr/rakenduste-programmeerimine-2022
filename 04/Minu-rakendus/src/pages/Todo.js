@@ -81,6 +81,17 @@ const Todo = () => {
     }
   }
 
+  const deleteTodo = async (id) => {
+    try {
+      const response = await axios.delete(TODO_URL + "/" + id)
+      fetchData()
+      console.log(response.data)
+    } catch (err) {
+      // Handle Error Here
+      console.error(err)
+    }
+  }
+
   //https://stackabuse.com/making-asynchronous-http-requests-in-javascript-with-axios/
   const handleAddTodo = async () => {
     //if (todoTitle === "" || todoImportance === "") return
@@ -152,7 +163,12 @@ const Todo = () => {
       <button onClick={handleAddTodo}>Add Todo</button>
       <button onClick={handleClearTodos}>Clear Complete</button>
       <div>{todos.filter((todo) => !todo.completed).length} left to do</div>
-      <TodoList todos={todos} toggleTodo={toggleTodo} getDate={getDate} />
+      <TodoList
+        todos={todos}
+        toggleTodo={toggleTodo}
+        getDate={getDate}
+        deleteTodo={deleteTodo}
+      />
     </>
   )
 }
