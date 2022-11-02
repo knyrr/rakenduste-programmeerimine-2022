@@ -35,9 +35,7 @@ app.use(express.json()) // body-parser asemel
 
 app.use(cors())
 
-//SALASÕNA ON NÄHA!
-//const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority`
-const uri = `mongodb+srv://knyrr:2CO6esuPqS1bvNjn@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority`
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority`
 
 //mongodb+srv://knyrr:<password>@cluster.2s8ziii.mongodb.net/?retryWrites=true&w=majority
 
